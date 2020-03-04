@@ -1,8 +1,7 @@
 body {
-    background-image: url(bg-image1.jpg);
+    background-image: url(images/citybgimg.jpeg);
     background-size: cover;
     color: white;
-    background-repeat: no-repeat;
 }
 .addBtn {
     border-radius: 0%;
@@ -11,9 +10,16 @@ body {
     text-align: center;
     font-size: 23px;
   }
-.font-color {
+.black-font {
     color: black;
+}
+.white-font {
+    color: white;
 }
 ul li {
     margin: 5px;
+}
+.center {
+    text-align: center;
+    padding: 20px;
 }

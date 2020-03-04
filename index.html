@@ -12,24 +12,23 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1 class="text-center display -1">TO DO LIST</h1>
-        <p class="text-center">Increase your productivty by making a list</p>
-        <div class="row">
-            <form class="col-8 mx-auto">
-                <div class="input-group">
-                    <input id="myInput" type="text" class="form-control" placeholder="New Item">
-                    <!-- <button onclick="newItem()" type="submit" class="btn btn-primary">+</button> -->
-                    <span onclick="newItem()" class="addBtn">+</span>
-                </div>
-            </form>
-        </div>
-        <ul class="list-group font-color col-8 mx-auto" id="myUL"></ul>
-        <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-secondary">Edit</button>
-            <button type="button" class="close">Delete</button>
-        </div>
-    </div>
+  <div class="center black-font">
+    <h1>To Do List</h1>
+    <p>Increase your productivity by making a list!</p>
+  </div>
+  <ul class="nav nav-tabs justify-content-center">
+    <li class="nav-item">
+      <button class="nav-link" onclick="newList()">New List</button>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle black-font" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">My Lists</a>
+      <div class="dropdown-menu">
+      </div>
+    </li>
+  </ul>
+  <div id="everything" class="everything"></div>
+
+  
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
