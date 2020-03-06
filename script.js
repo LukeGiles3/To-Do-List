@@ -1,24 +1,63 @@
-class User {
-  constructor(toDoLists) {
-    this.toDoLists = toDoLists;
+function todoList() {
+  if(document.getElementById("todoInput").value == '' || document.getElementById("todoInput").value == null) {
+    alert("Doing nothing is something right?")
+  } else {
+    let item = document.getElementById("todoInput").value
+    let text = document.createTextNode(item)
+    let newitem = document.createElement("li")
+    $(newitem).addClass("list-group-item")
+    newitem.appendChild(text)
+    document.getElementById("todoList").appendChild(newitem)
   }
 }
 
-class ToDoList {
-  constructor(name) {
-    this.name = name;
-    this.tasks = [];
 
-  }
-}
 
-class Task {
-  constructor(notDone, done, edit) {
-    this.notDone = notDone;
-    this.done = done;
-    this.edit = edit;
-  }
-}
+
+
+
+
+
+
+
+// class User {
+//   constructor(toDoLists) {
+//     this.toDoLists = toDoLists;
+//   }
+//   newList() {
+//     document.createElement('input')
+//   }
+// }
+
+// class ToDoList {
+//   constructor(selectedHtmlElement) {
+//     this.name = [];
+//     this.notDone = [];
+//     this.done = [];
+//     this.selectedHtmlElement = selectedHtmlElement || document.body;
+//     this.tasks = JSON.parse(window.localStorage.getItem("tasks")) || [];
+//   }
+
+//   addTask(text) {
+//     if (text == '' || text == null) {
+//       alert("Doing nothing is something, right?")
+//     } else {
+//       this.tasks.push(new Task(text))
+//       this.saveTask
+//     }
+//     this.render(this.tasks)
+//   }
+//   saveTask() {
+//     window.localStorage.setItem("tasks", JSON.stringify(this.tasks));
+//   }
+// }
+
+// class Task {
+//   constructor(text) {
+//     this.text = text;
+//     this.isCompleted = false;
+//   }
+// }
 // function newItem() {
 //     var li = document.createElement("LI");
 //     $(li).addClass("list-group-item");

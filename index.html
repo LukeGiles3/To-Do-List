@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <div class="center black-font">
+  <div class="center white-font">
     <h1>To Do List</h1>
     <p>Increase your productivity by making a list!</p>
   </div>
@@ -21,14 +21,23 @@
       <button class="nav-link" onclick="newList()">New List</button>
     </li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle black-font" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">My Lists</a>
+      <a class="nav-link dropdown-toggle white-font" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">My Lists</a>
       <div class="dropdown-menu">
       </div>
     </li>
   </ul>
-  <div id="everything" class="everything"></div>
+  <div id="newList" class="container">
+    <div class="row">
+      <div class="input-group" id="todoForm">
+        <input type="text" class="form-control" id="todoInput" placeholder="What do you have to do?" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-dark" type="button" id="button-addon2" onclick="todoList()">New Item</button>
+        </div>
+      </div>
+      <ul class="list-group col-lg black-font" id="todoList"></ul>
+    </div>
+  </div>
 
-  
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
