@@ -17,10 +17,10 @@
     <div class="row container-size">
       <nav class="col-md-3 d-none d-md-block bg-light sidebar">
         <div class="sidebar">
-          <ul class="nav flex-column">
-            <h4 class="black-font center">My Tasks</h4>
+          <ul id="newListNav" class="nav flex-column">
+            <h4 class="black-font center">My Lists</h4>
             <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="New List" aria-label="Recipient's username" aria-describedby="button-addon2">
+              <input id="newList" type="text" class="form-control" placeholder="New List" aria-label="Recipient's username" aria-describedby="button-addon2">
               <div class="input-group-append">
                 <button class="btn btn-secondary" type="button" onclick="newList()" id="button-addon2">+</button>
               </div>
@@ -28,18 +28,9 @@
           </ul>
         </div>
       </nav>
-      <main class="main-size">
-        <h1 class="center">To Do List</h1>
-        <div class="input-group mb-3">
-          <input type="text" id="todoInput" class="form-control" placeholder="What do you have to do?" aria-label="Recipient's username" aria-describedby="button-addon2">
-          <div class="input-group-append">
-            <button class="btn btn-secondary" type="button" onclick="todoList()" id="button-addon2">New Item</button>
-          </div>
-        </div>
-        <ul class="black-font" id="todoList"></ul>
-        </main>
-      </div>
+      <main id='toDoListContainer' class="main-size"></main>
     </div>
+  </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
