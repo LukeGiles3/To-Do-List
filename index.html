@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -12,31 +13,33 @@
 </head>
 
 <body>
-  <div class="center white-font">
-    <h1>To Do List</h1>
-    <p>Increase your productivity by making a list!</p>
-  </div>
-  <ul class="nav nav-tabs justify-content-center">
-    <li class="nav-item">
-      <button class="nav-link" onclick="newList()">New List</button>
-    </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle white-font" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">My Lists</a>
-      <div class="dropdown-menu">
-      </div>
-    </li>
-  </ul>
-  <div id="newList" class="container">
-    <div class="row">
-      <div class="input-group" id="todoForm">
-        <input type="text" class="form-control" id="todoInput" placeholder="What do you have to do?" aria-label="Recipient's username" aria-describedby="button-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-dark" type="button" id="button-addon2" onclick="todoList()">New Item</button>
+  <div class="container-fluid">
+    <div class="row container-size">
+      <nav class="col-md-3 d-none d-md-block bg-light sidebar">
+        <div class="sidebar">
+          <ul class="nav flex-column">
+            <h4 class="black-font center">My Tasks</h4>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="New List" aria-label="Recipient's username" aria-describedby="button-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-secondary" type="button" onclick="newList()" id="button-addon2">+</button>
+              </div>
+            </div>
+          </ul>
         </div>
+      </nav>
+      <main class="main-size">
+        <h1 class="center">To Do List</h1>
+        <div class="input-group mb-3">
+          <input type="text" id="todoInput" class="form-control" placeholder="What do you have to do?" aria-label="Recipient's username" aria-describedby="button-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-secondary" type="button" onclick="todoList()" id="button-addon2">New Item</button>
+          </div>
+        </div>
+        <ul class="black-font" id="todoList"></ul>
+        </main>
       </div>
-      <ul class="list-group col-lg black-font" id="todoList"></ul>
     </div>
-  </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
