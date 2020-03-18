@@ -35,3 +35,6 @@ ul li {
 ul li:hover {
     background: #ddd;
   }
+.completed {
+    text-decoration: line-through;
+}

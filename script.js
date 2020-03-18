@@ -7,21 +7,15 @@ for (i = 0; i < close.length; i++) {
     div.style.display = "none";
   }
 }
-// completed functionality
-var complete = document.getElementsByClassName('completed')
-for(let i = 0; i < completed.length; i++) {
-  completed[i].onclick = function()
-}
 // make a new list
 function newList() {
+  var name = document.getElementById('newList').value;
   let list = {
-    name: localStorage.getItem(listName),
+    name: name,
     items: [],
     completed: false
   }
-  var name = document.getElementById('newList').value;
-  var listName = localStorage.setItem('listName', name)
-  var myList = localStorage.setItem('listobject', list)
+  var myList = localStorage.setItem(name, list)
   //create display output for list items
   let output = `
         <h1 class="center">${list.name}</h1>
@@ -63,9 +57,10 @@ function todoList() {
     let text = document.createTextNode(item)
     let newitem = document.createElement("li")
     $(newitem).addClass("list-group-item")
+    $(newitem).attr('id', 'listItem')
     newitem.appendChild(text)
     document.getElementById("todoList").appendChild(newitem)
-
+    //close button
     var span = document.createElement("SPAN");
     var txt = document.createTextNode("\u00D7");
     span.className = "close";
@@ -78,5 +73,9 @@ function todoList() {
         div.style.display = "none";
       }
     }
+    //completed toggle
+    newitem.onclick = function() {
+      this.classList.toggle('completed')
+    };
   }
 }
