@@ -8,25 +8,25 @@ for (i = 0; i < close.length; i++) {
   }
 }
 // completed functionality
-var complete = document.getElementsByClassName('completed')
+var completed = document.getElementsByClassName('completed')
 for(let i = 0; i < completed.length; i++) {
-  completed[i].onclick = function()
+  completed[i].onclick = function(){}
 }
 // make a new list
 function newList() {
+  var name = document.getElementById('newList').value;
   let list = {
-    name: localStorage.getItem(listName),
+    name: name,
     items: [],
     completed: false
   }
-  var name = document.getElementById('newList').value;
-  var listName = localStorage.setItem('listName', name)
-  var myList = localStorage.setItem('listobject', list)
+  // var listName = localStorage.setItem('listName', name)
+  var myList = localStorage.setItem(name, list)
   //create display output for list items
   let output = `
         <h1 class="center">${list.name}</h1>
-          <div class="input-group mb-3">
-            <input type="text" id="todoInput" class="form-control" placeholder="What's next?" aria-describedby="button-addon2">
+        <div class="input-group mb-3">
+          <input type="text" id="todoInput" class="form-control" placeholder="What's next?" aria-describedby="button-addon2">
           <div class="input-group-append">
             <button class="btn btn-secondary" type="button" onclick="todoList()" id="button-addon2">New Item</button>
           </div>
