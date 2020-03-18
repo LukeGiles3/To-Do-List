@@ -1,12 +1,4 @@
-// close button functionality
 var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  }
-}
 // make a new list
 function newList() {
   var name = document.getElementById('newList').value;
@@ -40,13 +32,14 @@ function newList() {
   span.className = "close";
   span.appendChild(txt);
   newitem.appendChild(span);
-
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
+  for (let i = 0; i < close.length; i++) {
+    close[i].onclick = function () {
       var div = this.parentElement;
       div.style.display = "none";
     }
   }
+  //created so entry doesn't stick in new list input
+  document.getElementById('newList').value = ""
 }
 // to do list input and creating new task
 function todoList() {
@@ -66,16 +59,28 @@ function todoList() {
     span.className = "close";
     span.appendChild(txt);
     newitem.appendChild(span);
-
-    for (i = 0; i < close.length; i++) {
-      close[i].onclick = function() {
+    for (let i = 0; i < close.length; i++) {
+      close[i].onclick = function () {
         var div = this.parentElement;
         div.style.display = "none";
       }
     }
     //completed toggle
-    newitem.onclick = function() {
+    newitem.onclick = function () {
       this.classList.toggle('completed')
     };
+    // edit tasks
+    var edit = document.createElement("SPAN");
+    var eText = document.createTextNode("\u270E");
+    edit.className = "edit";
+    edit.appendChild(eText);
+    newitem.appendChild(edit);
+    edit.onclick = function () {
+      var p = prompt("Edit your entry");
+      var entry = this.parentElement.getElementsByClassName("list-group-item")[0]; // get sibling userEntry element
+      entry.innerText = p;
+    }
+    //created so previous entry doesn't stick in input 
+    document.getElementById('todoInput').value = ""
   }
 }
