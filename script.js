@@ -5,12 +5,13 @@ function newList() {
   let list = {
     name: name,
     items: [],
-    completed: false
+    
   }
-  var myList = localStorage.setItem(name, list)
+  localStorage.setItem('newList', JSON.stringify(list))
+  var getNewList = JSON.parse(localStorage.getItem('newList'))
   //create display output for list items
   let output = `
-        <h1 class="center">${list.name}</h1>
+        <h1 class="center">${getNewList.name}</h1>
           <div class="input-group mb-3">
             <input type="text" id="todoInput" class="form-control" placeholder="What's next?" aria-describedby="button-addon2">
           <div class="input-group-append">
