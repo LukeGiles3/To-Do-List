@@ -4,8 +4,7 @@ function newList() {
   var name = document.getElementById('newList').value;
   let list = {
     name: name,
-    items: [],
-    
+    items: []
   }
   localStorage.setItem('newList', JSON.stringify(list))
   var getNewList = JSON.parse(localStorage.getItem('newList'))
@@ -25,6 +24,7 @@ function newList() {
   let text = document.createTextNode(name)
   let newitem = document.createElement("li")
   $(newitem).addClass("list-group-item black-font")
+  $(newitem).attr('id', 'list')
   newitem.appendChild(text)
   document.getElementById("newListNav").appendChild(newitem)
   //create close button and append to item
@@ -39,6 +39,7 @@ function newList() {
       div.style.display = "none";
     }
   }
+    
   //created so entry doesn't stick in new list input
   document.getElementById('newList').value = ""
 }
@@ -78,9 +79,21 @@ function todoList() {
     newitem.appendChild(edit);
     edit.onclick = function () {
       var p = prompt("Edit your entry");
-      var entry = this.parentElement.getElementsByClassName("list-group-item")[0]; // get sibling userEntry element
+      var entry = document.getElementById("listItem"); 
       entry.innerText = p;
+
+      span.appendChild(txt);
+      entry.appendChild(span);
+        for (let i = 0; i < close.length; i++) {
+          close[i].onclick = function () {
+          var div = this.parentElement;
+          div.style.display = "none";
+      }
     }
+    edit.appendChild(eText);
+    entry.appendChild(edit);
+    }
+  
     //created so previous entry doesn't stick in input 
     document.getElementById('todoInput').value = ""
   }
