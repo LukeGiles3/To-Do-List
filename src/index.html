@@ -1,17 +1,50 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
     <title>To Do List</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link href="/src/styles.css" rel="stylesheet" />
     <script src="script.js"></script>
-</head>
+  </head>
 
-<body>
-
-</body>
-
+  <body class="bg-black">
+    <div
+      id="mainContainer"
+      class="mainContainer"
+    >
+      <div id="newListColumn" class="newListColumn">
+        <h1>To Do Lists</h1>
+        <div>
+            <input
+              type="text"
+              id="newToDoListInput"
+              placeholder="New List Name"
+            />
+            <button onclick="createNewToDoList()" id="newToDoListSubmit">+</button>
+        </div>
+        <div class="flexCol" id="toDoLists">
+        </div>
+      </div>
+      <div id="listItems" class="listItemsColumn">
+        <h1>to do list name</h1>
+        <div id="taskForm">
+          <form action="newTask">
+            <input type="text" id="newTaskForm" placeholder="New Task" />
+            <input type="submit" id="newTaskSubmit" value="+" />
+          </form>
+        </div>
+        <div id="taskList">
+          <input type="text" placeholder="My New Task" readonly />
+          <button>edit</button>
+          <button>delete</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="/script.js"></script>
 </html>
